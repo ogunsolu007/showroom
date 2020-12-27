@@ -60,7 +60,7 @@ header {
   display: flex;
   position: absolute;
   right: 0;
-  top: 71.4%;
+  top: 63.3%;
 }
 
 #prevBtn,
@@ -107,4 +107,73 @@ span img {
 }
 .about-details p {
   font-size: 16px;
+}
+footer {
+  background-color: black;
+  text-align: center;
+  color: aliceblue;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 750px) {
+  .content {
+    display: flex;
+  }
+  main {
+    display: flex;
+  }
+  .button {
+    background-color: black;
+    width: 120px;
+    height: 45px;
+    display: flex;
+    position: absolute;
+    right: 480px;
+    top: 63.1%;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    width: 10px;
+    height: 20px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+
+  .flex h1 {
+    font-size: 30px;
+    font-weight: 550;
+    text-transform: capitalize;
+    width: 70%;
+    margin: 40px auto;
+  }
+
+  .flex p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    width: 70%;
+    margin: 40px auto;
+  }
+
+  .flex h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 70%;
+    margin: 40px auto;
+  }
+  .about-details {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .about-details h4 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 25px auto;
+    width: 70%;
+  }
+  .about-details p {
+    font-size: 16px;
+    width: 70%;
+    margin: 0 auto;
+  }
 }
