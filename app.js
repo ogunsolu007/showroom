@@ -42,3 +42,14 @@ Slide.addEventListener("transitionend", () => {
     Slide.style.transform = `translateX(${-size * counter}px)`;
   }
 });
+
+const ham = document.querySelector(".ham");
+const close = document.querySelector(".close");
+const nav = document.querySelector(".nav");
+var open = true;
+ham.addEventListener("click", () => {
+  if (open) {
+    nav.classList.toggle("active");
+    ham.style.display = "none";
+  }
+});
