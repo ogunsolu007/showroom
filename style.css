@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+nav {
+  position: absolute;
+  background-color: red;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  top: 10px;
+  left: 20px;
+}
+
+nav h3 {
+  color: blanchedalmond;
+  margin-left: 120px;
+}
+.close {
+  display: none;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+}
+li a {
+  text-decoration: none;
+  padding: 10px;
+}
+li {
+  list-style-type: none;
+}
+header {
+  width: 100%;
+  overflow: hidden;
+}
+.head-slide {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.content {
+  min-width: 100%;
+}
+
+.content img {
+  height: 70vh;
+}
+.button {
+  background-color: black;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 71.4%;
+}
+
+#prevBtn,
+#nextBtn {
+  width: 10px;
+  height: 20px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.flex div {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.flex h1 {
+  font-size: 30px;
+  font-weight: 550;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.flex p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.flex h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+span img {
+  width: 60px;
+  height: 40px;
+}
+.about-details {
+  width: 80%;
+  margin: 40px auto;
+}
+.about-details h4 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+.about-details p {
+  font-size: 16px;
+}
