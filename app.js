@@ -50,6 +50,11 @@ var open = true;
 ham.addEventListener("click", () => {
   if (open) {
     nav.classList.toggle("active");
-    ham.style.display = "none";
+    ham.style.display = " none";
   }
+});
+close.addEventListener("click", () => {
+  nav.classList.remove("active");
+  nav.classList.add("nav");
+  ham.style.display = " block";
 });
