@@ -1,60 +1,42 @@
-const Slide = document.querySelector(".head-slide");
-const contentSlide = document.querySelectorAll(".content");
+const slider_img = document.querySelector(".slider__image--container");
+const slider_text = document.querySelector(".slider__text--container");
+const imgSlides = document.querySelectorAll(".slide ");
+const textSlides = document.querySelectorAll(" .text-content");
+const prevBtn = document.querySelector(".prev_arrow");
+const nextBtn = document.querySelector(".next_arrow");
 
-//button
-const prevBtn = document.querySelector("#prevBtn");
-const nextBtn = document.querySelector("#nextBtn");
+// Slider Functionalities
 
-//couter
+let curSlide = 0;
+let maxSlide = imgSlides.length && textSlides.length;
 
-let counter = 1;
+const goToSlide = function (slide) {
+  imgSlides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (i - slide)}% `;
+  });
+  textSlides.forEach((s, i) => {
+    s.style.transform = `translateX(${-120 * (i - slide)}% `;
+  });
+};
 
-const size = contentSlide[0].clientWidth;
-console.log(size);
+goToSlide(0);
 
-Slide.style.transform = `translateX(${-size * counter}px)`;
-
-//btn listener
-
-nextBtn.addEventListener("click", () => {
-  if (counter >= contentSlide.length - 1) return;
-  Slide.style.transition = "transform 2s ease-in-out";
-  counter++;
-  Slide.style.transform = `translateX(${-size * counter}px)`;
-});
-
-prevBtn.addEventListener("click", () => {
-  if (counter <= 0) return;
-  Slide.style.transition = "transform 2s ease-in-out";
-  counter--;
-  Slide.style.transform = `translateX(${-size * counter}px)`;
-});
-
-Slide.addEventListener("transitionend", () => {
-  if (contentSlide[counter].id === "lastClone") {
-    Slide.style.transition = "none";
-    counter = contentSlide.length - 2;
-    Slide.style.transform = `translateX(${-size * counter}px)`;
+const nextSlide = function () {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
   }
-  if (contentSlide[counter].id === "firstClone") {
-    Slide.style.transition = "none";
-    counter = contentSlide.length - counter;
-    Slide.style.transform = `translateX(${-size * counter}px)`;
+  goToSlide(curSlide);
+};
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
   }
-});
+  goToSlide(curSlide);
+};
 
-const ham = document.querySelector(".ham");
-const close = document.querySelector(".close");
-const nav = document.querySelector(".nav");
-var open = true;
-ham.addEventListener("click", () => {
-  if (open) {
-    nav.classList.toggle("active");
-    ham.style.display = " none";
-  }
-});
-close.addEventListener("click", () => {
-  nav.classList.remove("active");
-  nav.classList.add("nav");
-  ham.style.display = " block";
-});
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
